@@ -10,8 +10,24 @@ console.log(padre);
 
 
 
+let persona1 = {
+    nombre: "Juan",
+    apellido: "Perez",
+    nombreCompleto: function() {
+        return this.nombre + this.apellido;
+    }
+}
 
+let persona2 = {
+    nombre: "Carlos",
+    apellido: "Lara",
 
+}
+
+//uso de call 
+//para usar el metodo persona1.Completo para usar en la persona 2
+console.log(persona1.nombreCompleto());
+console.log(persona1.nombreCompleto.call(persona2));
 
 
 
