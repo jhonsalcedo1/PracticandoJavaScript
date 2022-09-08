@@ -75,3 +75,13 @@ console.log(Persona.contadorPersonas);
 console.log(persona2.toString);
 
 console.log(Persona.MAX_OBJ);
+
+let persona3 = new Persona("Mariano", "Lara");
+
+let persona4 = new Persona("Liliana", "Chambi");
+
+let persona5 = new Persona("Nelia", "Chambi");
+
+console.log(Persona.MAX_OBJ);
+
+console.log(persona5.toString());
