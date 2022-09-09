@@ -24,7 +24,7 @@ class Producto {
 
     }
     toString() {
-        return this._idProducto + " " + this._nombre + " " + this._precio;
+        return `${this._idProducto} ${this._nombre} ${this._precio}`;
     }
 
 }
@@ -52,10 +52,31 @@ class Orden {
         } else {
             console.log("No se puede agregar mas productos");
         }
+    }
+
+    calcularTotal() {
+        let totalVenta = 0;
+        for (let producto of this._productos) {
+            totalVenta += producto.precio; //totalVenta = total Venta + producto.precio
+
+        }
+        return totalVenta;
+    }
+    mostrarOrden() {
+        let productosOrden = "";
+        for (let producto of this._productos) {
+            productosOrden += producto.toString() + "";
+        }
+        console.log(`Orden:${this._idOrden} total:${this._calcularTotal()} , Productos:${productosOrden}`);
+
 
     }
 }
 let producto1 = new Producto("jhon", 300);
-console.log(producto1.toString());
 let producto2 = new Producto("marco", 400);
-console.log(producto2.toString());
+
+let orden1 = new Orden();
+orden1.agregarProducto(producto1);
+orden1.agregarProducto(producto2);
+
+orden1.mostrarOrden();
